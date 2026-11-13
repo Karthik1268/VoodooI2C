@@ -32,7 +32,7 @@ jobs:
     - name: CI Bootstrap
       run: |
         src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
-        XC=$(xcode-select -p)
+        XC=$(env -u DEVELOPER_DIR xcode-select -p)
         echo "DEVELOPER_DIR=$XC" >> "$GITHUB_ENV"
         echo "OVERRIDE_PYTHON3=$XC/usr/bin/python3" >> "$GITHUB_ENV"
     - name: VoodooInput Bootstrap
