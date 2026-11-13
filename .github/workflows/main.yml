@@ -15,7 +15,7 @@ env:
 jobs:
   build:
     name: Kext Build
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     env:
       JOB_TYPE: BUILD
     steps:
@@ -72,7 +72,7 @@ jobs:
 
   docs:
     name: Docs
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     steps:
     - name: Checkout VoodooI2C
       uses: actions/checkout@v4
@@ -121,7 +121,7 @@ jobs:
   
   lint:
     name: Lint
-    runs-on: macos-latest
+    runs-on: macos-15-intel
     steps:
       - name: Checkout VoodooI2C
         uses: actions/checkout@v4
