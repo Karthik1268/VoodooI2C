@@ -30,11 +30,11 @@ jobs:
         repository: acidanthera/MacKernelSDK
         path: MacKernelSDK
     - name: CI Bootstrap
-         run: |
-           src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
-           XC=$(xcode-select -p)
-           echo "DEVELOPER_DIR=$XC" >> "$GITHUB_ENV"
-           echo "OVERRIDE_PYTHON3=$XC/usr/bin/python3" >> "$GITHUB_ENV"
+      run: |
+        src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/ocbuild/master/ci-bootstrap.sh) && eval "$src" || exit 1
+        XC=$(xcode-select -p)
+        echo "DEVELOPER_DIR=$XC" >> "$GITHUB_ENV"
+        echo "OVERRIDE_PYTHON3=$XC/usr/bin/python3" >> "$GITHUB_ENV"
     - name: VoodooInput Bootstrap
       run: |
         src=$(/usr/bin/curl -Lfs https://raw.githubusercontent.com/acidanthera/VoodooInput/master/VoodooInput/Scripts/bootstrap.sh) && eval "$src" && mv VoodooInput Dependencies
